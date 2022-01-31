@@ -13,7 +13,9 @@ class SaveCacheLogged implements UseCase<void, SaveStorageParams> {
   final CacheStorageRepository cacheStorage;
 
   @override
-  Future<Either<Failure, void>> call({required SaveStorageParams params}) async {
+  Future<Either<Failure, void>> call({
+    required SaveStorageParams params,
+  }) async {
     try {
       await cacheStorage.write(key: params.key, value: params.value);
       return const Right<Failure, void>(null);

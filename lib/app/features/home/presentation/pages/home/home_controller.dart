@@ -1,9 +1,8 @@
-import 'package:estacionamento/app/core/routes/app_pages.dart';
-import 'package:estacionamento/app/features/home/presentation/pages/historic/historic_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/languages/keys_translation.dart';
+import '../../../../../core/routes/app_pages.dart';
 import '../../../../../core/spacing/spacing.dart';
 import '../../../../../core/typography/typography.dart' as typo;
 import '../../../domain/entities/garage_info.dart';
@@ -11,6 +10,7 @@ import '../../../domain/entities/parking_info.dart';
 import '../../../infra/models/garage_model.dart';
 import '../../../infra/models/parking_model.dart';
 import '../available/available_page.dart';
+import '../historic/historic_page.dart';
 import '../occupied/occupied_page.dart';
 
 class HomeController extends GetxController {
