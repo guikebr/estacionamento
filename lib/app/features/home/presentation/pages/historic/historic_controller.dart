@@ -34,12 +34,21 @@ class HistoricController extends GetxController {
   final DateFormat _day = DateFormat('dd-MM-yyyy');
   final DateFormat _hours = DateFormat('HH:mm a');
 
-  String receiveToValue(GarageInfo garage) =>
-      '\nRecibo: R\$${garage.total!.toStringAsFixed(2).replaceAll('.', ',')}';
+  String receiveToValue(GarageInfo garage) {
+    final double value = garage.total ?? 0;
+    return value > 0
+        ? '\nRecibo: R\$${value.toStringAsFixed(2).replaceAll('.', ',')}'
+        : '\n${KeysTranslation.textToReceived.tr}';
+  }
 
   String day(GarageInfo garage) => '${KeysTranslation.textEntrance.tr}: '
       '${_day.format(garage.entrance!)} - ${_hours.format(garage.entrance!)}';
 
-  String hours(GarageInfo garage) => '\n${KeysTranslation.textExit.tr}: '
-      '${_day.format(garage.exit!)} - ${_hours.format(garage.exit!)}';
+  String hours(GarageInfo garage) {
+    if (garage.exit != null) {
+      return '\n${KeysTranslation.textExit.tr}:'
+          ' ${_day.format(garage.exit!)} - ${_hours.format(garage.exit!)}';
+    }
+    return '';
+  }
 }

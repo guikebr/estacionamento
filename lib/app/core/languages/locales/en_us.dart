@@ -12,6 +12,7 @@ const Map<String, String> enUs = <String, String>{
   KeysTranslation.textHour: 'Hour',
   KeysTranslation.textExit: 'Exit',
   KeysTranslation.textEntrance: 'Entrance',
+  KeysTranslation.textToReceived: 'To received',
   KeysTranslation.buttonStart: 'Start',
   KeysTranslation.textEmptyAvailable: 'No parking spaces available',
   KeysTranslation.textEmptyOccupied: 'No occupied parking spaces',

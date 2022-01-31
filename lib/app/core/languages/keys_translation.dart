@@ -8,6 +8,7 @@ abstract class KeysTranslation {
   static const String textContact = 'text_contact';
   static const String textHour = 'text_hour';
   static const String textEntrance = 'text_entrance';
+  static const String textToReceived = 'text_to_received';
   static const String textExit = 'text_exit';
   static const String textDate = 'text_date';
   static const String textEmptyAvailable = 'text_empty_available';

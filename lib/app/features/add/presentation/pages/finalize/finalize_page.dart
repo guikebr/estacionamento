@@ -145,7 +145,9 @@ class FinalizePage extends GetView<FinalizeController> {
                 builder: (FinalizeController get) {
                   return Button(
                     label: KeysTranslation.buttonFinalize.tr,
-                    variant: ButtonVariant.danger,
+                    variant: get.enableFinalize
+                        ? ButtonVariant.danger
+                        : ButtonVariant.disabled,
                     hasShape: true,
                     alignTextCenter: true,
                     onPressed: get.finalize,

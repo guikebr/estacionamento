@@ -11,6 +11,7 @@ const Map<String, String> ptBr = <String, String>{
   KeysTranslation.textDate: 'Data',
   KeysTranslation.textHour: 'Horário',
   KeysTranslation.textEntrance: 'Entrada',
+  KeysTranslation.textToReceived: 'À receber',
   KeysTranslation.textExit: 'Saída',
   KeysTranslation.buttonStart: 'Iniciar',
   KeysTranslation.textEmptyAvailable: 'Nenhuma vaga disponível',

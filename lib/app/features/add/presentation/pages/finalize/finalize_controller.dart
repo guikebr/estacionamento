@@ -6,6 +6,7 @@ import '../../../../../core/languages/keys_translation.dart';
 import '../../../../../core/spacing/spacing.dart';
 import '../../../../../core/typography/typography.dart';
 import '../../../../home/domain/entities/car_info.dart';
+import '../../../../home/domain/entities/garage_info.dart';
 import '../../../../home/infra/models/car_model.dart';
 import '../../../../home/infra/models/garage_model.dart';
 import '../../../../home/presentation/pages/occupied/occupied_controller.dart';
@@ -75,6 +76,8 @@ class FinalizeController extends GetxController {
 
   int get daysInMinutes => now.difference(entrance).inMinutes;
 
+  bool get enableFinalize => daysInMinutes > 0;
+
   void getArg() {
     final dynamic arg = Get.arguments;
     if (arg != null && arg is GarageModel) {
@@ -90,7 +93,23 @@ class FinalizeController extends GetxController {
       exit: now,
       total: total,
     );
-    occupiedController.homeController.historic.add(garage);
+
+    final List<GarageInfo> updateList =
+        occupiedController.homeController.historic.map(
+      (GarageInfo item) {
+        if (item.id == garage.id && item.entrance == garage.entrance) {
+          item = garage;
+        }
+        return item;
+      },
+    ).toList();
+    occupiedController.homeController.historic = updateList;
+
+    for (GarageInfo item in occupiedController.homeController.historic) {
+      if (item.id == garage.id && item.entrance == garage.entrance) {
+        item = garage;
+      }
+    }
   }
 
   void finalize() {

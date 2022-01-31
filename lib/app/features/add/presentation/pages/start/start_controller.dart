@@ -78,9 +78,10 @@ class StartController extends GetxController {
 
   void start() {
     int index = garage.id;
-    garage = GarageModel(id: car.id, car: car, entrance: now);
+    garage = GarageModel(id: index, car: car, entrance: now, total: 0);
 
     availableController
+      ..homeController.historic.add(garage)
       ..homeController.parking.garages[--index] = garage
       ..homeController.update()
       ..update();
