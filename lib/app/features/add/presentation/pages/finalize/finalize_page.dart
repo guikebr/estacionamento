@@ -11,7 +11,6 @@ class FinalizePage extends GetView<FinalizeController> {
 
   @override
   Widget build(BuildContext context) {
-    print(controller.totalToPay);
     return CupertinoPageScaffold(
       child: Material(
         child: Column(

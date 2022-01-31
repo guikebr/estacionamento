@@ -1,5 +1,3 @@
-import 'package:estacionamento/app/features/settings/presentation/pages/setting/setting_binding.dart';
-import 'package:estacionamento/app/features/settings/presentation/pages/setting/setting_page.dart';
 import 'package:get/get.dart';
 
 import '../../features/add/presentation/pages/finalize/finalize_binding.dart';
@@ -14,6 +12,8 @@ import '../../features/home/presentation/pages/home/home_binding.dart';
 import '../../features/home/presentation/pages/home/home_page.dart';
 import '../../features/home/presentation/pages/occupied/occupied_binding.dart';
 import '../../features/home/presentation/pages/occupied/occupied_page.dart';
+import '../../features/settings/presentation/pages/setting/setting_binding.dart';
+import '../../features/settings/presentation/pages/setting/setting_page.dart';
 
 part 'app_routes.dart';
 

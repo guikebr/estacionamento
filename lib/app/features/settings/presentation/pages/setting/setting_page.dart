@@ -1,9 +1,9 @@
-import 'package:estacionamento/app/core/widget/input/input.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/languages/keys_translation.dart';
+import '../../../../../core/widget/input/input.dart';
 import 'setting_controller.dart';
 
 class SettingPage extends GetView<SettingController> {
