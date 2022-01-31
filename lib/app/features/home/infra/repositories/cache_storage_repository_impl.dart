@@ -24,8 +24,11 @@ class CacheStorageRepositoryImpl implements CacheStorageRepository {
   @override
   Either<Failure, String> read({required String key}) {
     try {
-      final String result = localStorage.read<String>(key) ?? '';
-      return Right<Failure, String>(result);
+      if (hasData(key: key)) {
+        final String? result = localStorage.read<String>(key);
+        return Right<Failure, String>(result!);
+      }
+      return const Right<Failure, String>('');
     } on Exception catch (e) {
       return Left<Failure, String>(
         CachedFailure(message: '${KeysTranslation.textErrorCache.tr}: $e'),
