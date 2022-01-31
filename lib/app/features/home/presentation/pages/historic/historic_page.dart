@@ -1,9 +1,9 @@
-import '../../../../../core/languages/keys_translation.dart';
-import '../../../domain/entities/garage_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../../core/languages/keys_translation.dart';
+import '../../../domain/entities/garage_info.dart';
 import 'historic_controller.dart';
 
 class HistoricPage extends GetWidget<HistoricController> {
