@@ -76,16 +76,18 @@ class HistoricPage extends GetWidget<HistoricController> {
                           ],
                         ),
                 ),
-                const Divider(),
-                ListTile(
-                  title: Text('Total Recebido', style: get.typography.title3),
-                  trailing: Text(
-                    get.totalReceived,
-                    style: get.typography.title3.copyWith(
-                        color: Theme.of(context).colorScheme.primaryVariant,
-                        fontWeight: FontWeight.bold),
-                  ),
-                )
+                if (!get.isEmptyList) ...<Widget>[
+                  const Divider(),
+                  ListTile(
+                    title: Text('Total Recebido', style: get.typography.title3),
+                    trailing: Text(
+                      get.totalReceived,
+                      style: get.typography.title3.copyWith(
+                          color: Theme.of(context).colorScheme.primaryVariant,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  )
+                ],
               ],
             );
           },
