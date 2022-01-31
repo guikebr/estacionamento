@@ -19,8 +19,8 @@ class OccupiedController extends GetxController {
 
   bool get isEmpty => garages.isEmpty;
 
-  void navigate(GarageInfo garage) => Get.toNamed<dynamic>(
-        Routes.finalizePage,
-        arguments: garage,
-      );
+  Future<void> navigate(GarageInfo garage) async {
+    await Get.toNamed<dynamic>(Routes.finalizePage, arguments: garage);
+    update();
+  }
 }

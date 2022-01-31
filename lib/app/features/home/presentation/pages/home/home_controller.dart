@@ -9,8 +9,11 @@ import '../../../domain/entities/garage_info.dart';
 import '../../../domain/entities/parking_info.dart';
 import '../../../infra/models/garage_model.dart';
 import '../../../infra/models/parking_model.dart';
+import '../available/available_controller.dart';
 import '../available/available_page.dart';
+import '../historic/historic_controller.dart';
 import '../historic/historic_page.dart';
+import '../occupied/occupied_controller.dart';
 import '../occupied/occupied_page.dart';
 
 class HomeController extends GetxController {
@@ -86,23 +89,43 @@ class HomeController extends GetxController {
     }
   }
 
-  void previousPage() => pageController.previousPage(
-        duration: const Duration(milliseconds: 150),
-        curve: Curves.easeIn,
-      );
+  Future<void> previousPage() async {
+    await pageController.previousPage(
+      duration: const Duration(milliseconds: 150),
+      curve: Curves.easeIn,
+    );
+    updatePages();
+  }
 
-  void nextPage() => pageController.nextPage(
-        duration: const Duration(milliseconds: 150),
-        curve: Curves.easeIn,
-      );
+  Future<void> nextPage() async {
+    await pageController.nextPage(
+      duration: const Duration(milliseconds: 150),
+      curve: Curves.easeIn,
+    );
+    updatePages();
+  }
+
+  void updatePages() {
+    if (currentPage == 0) {
+      Get.find<AvailableController>().update();
+    } else if (currentPage == 1) {
+      Get.find<OccupiedController>().update();
+    } else {
+      Get.find<HistoricController>().update();
+    }
+    update();
+  }
 
   void getChangedPage(int? page) {
     if (page != _currentPage) {
       _currentPage = page;
       pageController.jumpToPage(currentPage);
-      update();
+      updatePages();
     }
   }
 
-  void navigateToSettings() => Get.toNamed<dynamic>(Routes.settingsPage);
+  Future<void> navigateToSettings() async {
+    await Get.toNamed<dynamic>(Routes.settingsPage);
+    update();
+  }
 }

@@ -44,6 +44,7 @@ abstract class AppPages {
         GetPage<HistoricPage>(
           name: Routes.historicPage,
           page: () => const HistoricPage(),
+          binding: HistoricBinding(),
         ),
         GetPage<SettingPage>(
           name: Routes.settingsPage,

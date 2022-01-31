@@ -29,6 +29,7 @@ class HistoricPage extends GetWidget<HistoricController> {
                           ),
                         )
                       : CustomScrollView(
+                          physics: const BouncingScrollPhysics(),
                           slivers: <Widget>[
                             CupertinoSliverRefreshControl(
                               onRefresh: () async => get.update(),
@@ -79,7 +80,10 @@ class HistoricPage extends GetWidget<HistoricController> {
                 if (!get.isEmptyList) ...<Widget>[
                   const Divider(),
                   ListTile(
-                    title: Text('Total Recebido', style: get.typography.title3),
+                    title: Text(
+                      KeysTranslation.textTotalReceived.tr,
+                      style: get.typography.title3,
+                    ),
                     trailing: Text(
                       get.totalReceived,
                       style: get.typography.title3.copyWith(

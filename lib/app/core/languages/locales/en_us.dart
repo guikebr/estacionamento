@@ -18,6 +18,7 @@ const Map<String, String> enUs = <String, String>{
   KeysTranslation.textEmptyOccupied: 'No occupied parking spaces',
   KeysTranslation.textEmptyHistoric: 'No history found',
   KeysTranslation.textHourValue: 'Hour value',
+  KeysTranslation.textTotalReceived: 'Total received',
 
   // TITLES
   KeysTranslation.titleWait: 'Wait',

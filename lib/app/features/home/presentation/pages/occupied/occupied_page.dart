@@ -26,6 +26,7 @@ class OccupiedPage extends GetView<OccupiedController> {
                     ),
                   )
                 : CustomScrollView(
+                    physics: const BouncingScrollPhysics(),
                     slivers: <Widget>[
                       CupertinoSliverRefreshControl(
                         onRefresh: () async => get.update(),

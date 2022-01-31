@@ -21,8 +21,11 @@ class AvailableController extends GetxController {
 
   bool get isEmptyList => garages.isEmpty;
 
-  void navigate(GarageInfo garage) => Get.toNamed<dynamic>(
-        Routes.startPage,
-        arguments: garage,
-      );
+  Future<void> navigate(GarageInfo garage) async {
+    await Get.toNamed<dynamic>(
+      Routes.startPage,
+      arguments: garage,
+    );
+    update();
+  }
 }

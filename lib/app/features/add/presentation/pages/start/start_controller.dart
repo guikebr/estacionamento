@@ -62,6 +62,7 @@ class StartController extends GetxController {
   @override
   void dispose() {
     super.dispose();
+    name.dispose();
     maskPlate.dispose();
     maskContact.dispose();
   }
@@ -82,9 +83,7 @@ class StartController extends GetxController {
 
     availableController
       ..homeController.historic.add(garage)
-      ..homeController.parking.garages[--index] = garage
-      ..homeController.update()
-      ..update();
+      ..homeController.parking.garages[--index] = garage;
 
     Get.back<void>();
   }

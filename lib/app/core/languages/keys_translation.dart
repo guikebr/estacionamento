@@ -15,6 +15,7 @@ abstract class KeysTranslation {
   static const String textEmptyOccupied = 'text_empty_occupied';
   static const String textEmptyHistoric = 'text_empty_historic';
   static const String textHourValue = 'text_hour_value';
+  static const String textTotalReceived = 'text_total_received';
 
   // TITLES
   static const String titleWait = 'title_wait';

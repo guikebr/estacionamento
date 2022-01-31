@@ -117,10 +117,7 @@ class FinalizeController extends GetxController {
     int index = garage.id;
     garage = GarageModel(id: garage.id);
 
-    occupiedController
-      ..homeController.parking.garages[--index] = garage
-      ..homeController.update()
-      ..update();
+    occupiedController.homeController.parking.garages[--index] = garage;
 
     Get.back<void>();
   }

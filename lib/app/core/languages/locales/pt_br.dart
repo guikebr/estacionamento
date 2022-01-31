@@ -18,6 +18,7 @@ const Map<String, String> ptBr = <String, String>{
   KeysTranslation.textEmptyOccupied: 'Nenhuma vaga ocupada',
   KeysTranslation.textEmptyHistoric: 'Nenhum histórico encontrado',
   KeysTranslation.textHourValue: 'Valor da hora',
+  KeysTranslation.textTotalReceived: 'Total Recebido',
 
   // TITLES
   KeysTranslation.titleWait: 'Aguarde',
